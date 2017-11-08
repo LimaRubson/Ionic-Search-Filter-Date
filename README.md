@@ -1,26 +1,27 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+Ionic Search Filter Date
 
 ## How to use this template
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+*Procedures:
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+**Install the NodeJS - When installing NodeJS, NPM will already be included in the installation. NPM is the one who will install Ionic and Cordova.
 
-### With the Ionic CLI:
 
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+**Install Ionic:
 
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
-```
+npm install -g cordova ionic
 
-Then, to run it, cd into `myBlank` and run:
+*Cloning the repository:
 
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
+**To clone the repository, run:
 
-Substitute ios for android if not on a Mac.
+     git clone https://github.com/LimaRubson/Ionic-Search-Filter-Date.git
 
+
+**Install dependencies:
+
+    npm install
+
+**Run application:
+
+    ionic serve
