@@ -1,14 +1,40 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      High Performance List Filtering in Ionic 3
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  
+  <ion-searchbar (input)="getItems($event)" placeholder="Buscar"></ion-searchbar>
+
+  <ion-list>
+                <!-- Primeiro nivel -->
+                <ion-list-header *ngFor="let item of programacao; let i = index" no-lines no-padding>
+                  <button text-wrap ion-item (click)="toggleSection(i)" detail-none [ngClass]="{'section-active': item.status, 'section':!item.status}">
+                    <ion-icon item-left name="ios-arrow-forward" *ngIf="!item.status" color="cinema"></ion-icon>
+                    <ion-icon item-left name="ios-arrow-down"  *ngIf="item.status"></ion-icon>
+                      {{ item.name }}    
+                  </button>
+
+                  <ion-list *ngIf="item.children && item.status" no-lines no-padding>
+                        <!-- Segundo nivel -->
+                        <ion-list-header *ngFor="let child of item.children; let j = index" no-padding>
+                          <ion-item *ngIf="!child.children" detail-none class="child-item" text-wrap> 
+                            <ion-avatar item-left>
+                              <img [src]="child.avatar">
+                            </ion-avatar>
+                            <h3>{{ child.titulo }}</h3>
+                            <p>
+                              <b>{{ child.horario }}:</b>
+                              Cinema do Museu
+                            </p> 
+                          </ion-item>
+                        </ion-list-header>     
+                  </ion-list>
+                </ion-list-header> 
+           </ion-list>
+
 </ion-content>
